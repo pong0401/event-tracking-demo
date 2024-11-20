@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Tracking Demo</title>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX'); // Replace GTM-XXXXXXX with your GTM ID
+  </script>
+  <!-- End Google Tag Manager -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+    .hover-box {
+      width: 200px;
+      height: 100px;
+      background: lightblue;
+      text-align: center;
+      line-height: 100px;
+      margin: 20px 0;
+      cursor: pointer;
+    }
+    .nav-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav-link:hover {
+      background: #0056b3;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" 
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <h1>Welcome to Event Tracking Demo</h1>
+  <p>Perform actions like clicking, hovering, or navigating to see events tracked in Google Analytics.</p>
+
+  <!-- Button Click Tracking -->
+  <button id="trackButton">Click Me</button>
+
+  <!-- Mouse Hover Tracking -->
+  <div id="hoverBox" class="hover-box">Hover Over Me</div>
+
+  <!-- Form Submission Tracking -->
+  <form id="demoForm" style="margin-top: 20px;">
+    <label for="email">Enter your email:</label>
+    <br>
+    <input type="email" id="email" name="email" required placeholder="example@example.com" />
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Navigation Tracking -->
+  <a href="page2.html" class="nav-link">Go to Page 2</a>
+
+  <script>
+    // Example to log actions to the console (for debugging)
+    document.querySelector('#trackButton').addEventListener('click', function () {
+      console.log('Button clicked');
+    });
+
+    document.querySelector('#hoverBox').addEventListener('mouseover', function () {
+      console.log('Mouse hovered over the box');
+    });
+
+    document.querySelector('#demoForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent actual form submission for testing
+      console.log('Form submitted');
+    });
+  </script>
+</body>
+</html>
